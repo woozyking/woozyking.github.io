@@ -1,0 +1,29 @@
+---
+layout: post
+title: "Droplet 2"
+date: 2013-05-11 00:40
+tags: vps
+---
+As mentioned [earlier](/2013/05/09/needed-a-drop/), I finally dropped virtual host and rented myself a [Droplet](https://www.digitalocean.com/?refcode=a88edf242e1d). It's cheap, easy to setup, no downside yet (except that it's a really small instance compare to what I work with during day times).
+
+I've wanted to move our [xiangpi.ca](https://xiangpi.ca) to a VPS for a long time now since I don't like Wordpress without heavy optimizations. With a virtual host there wasn't much I could do.
+<!-- more -->
+So here's the extended list of what I've done:
+
+1. `apt-get install php-fpm mysql php-apc`. I finally get to use a bytecode cache for PHP in a production environment now.
+2. Configured another server block and content root for xiangpi.ca to be hosted here through Nginx.
+3. Grabbed the latest Wordpress and placed it under the content root.
+4. `scp`ed all the uploads to `wp-content/uploads`. I didn't have to do this since I already use [Jetpack Photon](https://jetpack.me/support/photon/). But it's always good to have a failover.
+5. Imported the SQL dump through MySQL shell (which is horrible compare to MongoDB's and Redis'). I didn't do the XML export-import way since I co-author xiangpi.ca with my girlfriend together.
+6. Configured xiangpi.ca name server to be CloudFlare's.
+7. <del>Followed this [guide](https://www.jimwestergren.com/wordpress-with-redis-as-a-frontend-cache/) to make Wordpress serve in-memory static contents through Redis.</del>
+8. Installed my favorite Wordpress plugins and picked a new cool theme.
+9. Flipped the "CDN + Full Optimization" switch on CloudFlare for xiangpi.ca.
+
+<del>Without too much hassle (thanks to the Open Source community), I managed to make the great yet bloated blogware [almost as fast](https://whichloadsfaster.com/?l=xiangpi.ca&r=runzhou.li) as my true static blog. Cool. The reason why I chose Redis instead of Varnish (which is more popular for this particular use case), is because I want to maximize CloudFlare's duty to cache those already static contents (JS, CSS, images), while using Redis only for generated HTML pages.</del>
+
+<del>And really, why not Redis?</del>
+
+UPDATE 2013-05-15: The hacky solution of Redis served cache becomes a bit problematic. As blitz.io stress test revealed its instability, I decided to drop it and find a more sophisticated solution (despite the fact that I still LOVE Redis and use it everyday). I know that W3 Total Cache plugin for Wordpress does a great job interfacing with a variety of caching mechanisms including APC, Memcached and Varnish. But I quickly abandoned this plan because I only intent to use APC the lazy way, mostly for logged in users and wp-admin stuff; and I don't trust Memcached or Varnish PHP driver's performance.
+
+So I Google'd around and found [this](https://codex.wordpress.org/Nginx#Nginx_fastcgi_cache). Brilliant solution! The only thing hacky here is that the needed purge module does not come with standard Nginx installation. The good news is that compiling Nginx with `--add-module` was a no brainer. As of now, with limited RUSH I could perform on blitz.io, my [Wordpress driven site](https://www.blitz.io/report/400f359b9f6132b1c4671dea8a274d8b) performs [equally well](https://whichloadsfaster.com/?l=xiangpi.ca&r=runzhou.li) as [this true static site](https://www.blitz.io/report/400f359b9f6132b1c4671dea8a2731bc).

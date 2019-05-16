@@ -1,0 +1,32 @@
+title: 'Inbox 0'
+date: 2014-05-02 00:03:12
+tags: [work, life]
+---
+### "Yes, you have my full attention right now."
+
+TL;DR: Archive emails (ham), with discipline.
+<!-- more -->
+What [Mailbox](https://www.mailboxapp.com/) enlightened me in the beginning wasn't even its swipe to archive/read-later feature, but the help guide on archiving all my emails to clear the inbox. It was a moment of sudden realization on the very concept of "inbox" - just like the physical inbox, you get some message or item delivered in it, and you take them out right away. I doubt if anybody would read a letter and shove it right back into the inbox.
+
+However, the email inbox isn't exactly the same as the physical inbox. You see, more so than email itself, it is an abstract and virtual artifact. Some recent improvements in various email systems (arguably led by Gmail), such as huge storage, visual separation of unread and read messages (now even by auto-detected categories), folders, flags, labels, etc., all seem to help users not to worry about archiving emails anymore. And that's exactly what I believed in before the sudden realization.
+
+What happened after archiving all the emails was fascinating. There was a mental and visual relief when I looked at my inbox from various email clients that I use. There was a sudden anticipation for the next email I'd receive, hence my full attention when I actually received it. I think it was a weekly letter from EB Games, the very first one I actually read since subscription. After reading it, I archived it right away, and bought Halo 4 after work.
+
+It seems to be a lot of work, but try it, it actually saves you so much more time than you can imagine. Archive the email when you're done, and keep your inbox 0. Mailbox can be handy to set some emails to be read-later, which helps the case when you want to keep inbox 0 so you pay full attention to new messages, but also want to handle some of them another time (for example, a message alerting you on your mobile bill that's due in 30 days).
+
+For spams, mark them as spam. I think this is [currently missing from Mailbox app](https://www.mailboxapp.com/help/#/4414).
+
+Archive (All mail by Gmail terminology, a bit weird to me still) becomes more obvious to me now on what it is for - just like the physical ones, it's there for you to occasionally go back and search for information. Derp.
+
+It's easy to either let your read-later list grow indefinitely to become another mental burden, or give yourself excuses that you would archive this email later that eventually lead to another thousand-message inbox, which then often leads to a portion (sometimes, most) of them being unread.
+
+Back to square one now, are we? Please don't.
+
+Once you read an email, decide precisely on:
+
+* Whether you're done with it (archive?)
+* If not, when exactly you want to deal with it (read-later?)
+
+Then actually follow up on the ones you haven't done with and get them done so you can archive them. Mailbox, for example, reminds you by pushing the message right back to your inbox, which by now should have your full attention.
+
+It's viable to not use something like Mailbox (hopefully this clarifies that I don't work for them), just that you would need a bit more discipline to clear the unfinished messages you left in inbox because there is no read-later list that reminds you automatically at a later time. Of course, optimizing your overall workflow so that you wouldn't need to handle things asynchronously is the superior productivity boost. Unfortunately, it's near impossible in this internet and information era.
