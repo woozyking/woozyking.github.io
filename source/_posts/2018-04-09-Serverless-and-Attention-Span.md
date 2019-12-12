@@ -1,7 +1,10 @@
 ---
 title: Serverless and Attention Span
 date: 2018-04-09 08:40:04
-tags: [serverless, programming]
+tags:
+  - serverless
+  - programming
+  - attention span
 ---
 
 Lately I’ve been leveraging the "serverless" architecture often. I like its statelessness, the predictable cost factor, the simplicity of development and deployment, etc. It just fits for systems that are event-driven. It's already a strong tool that is being used by many live products, yet still steadily being improved by providers and the community on aspects such as cold-start time and time-to-live. Not to mention frameworks such as [`serverless`](https://serverless.com) and [`apex`](https://apex.run/) further spoil us with ease of utilization.
