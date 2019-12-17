@@ -10,13 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm install -g hexo hexo-deployer-git
-      - run: yarn install
-      - run: hexo clean
-      - run: hexo generate
-      - run: git config --global user.email "runzhou.li@gmail.com"
-      - run: git config --global user.name "woozyking"
-      - run: hexo deploy
+
+      - name: Configuration environment
+        env:
+          GITHUB_ACTIONS_PRIVATE: ${{ secrets.github_actions_private }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$GITHUB_ACTIONS_PRIVATE" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "woozyking"
+          git config --global user.email "runzhou.li@gmail.com"
+
+      - name: Install dependencies
+        run: |
+          npm i -g hexo-cli
+          yarn install
+
+      - name: Hexo deployment
+        run: hexo g -d
