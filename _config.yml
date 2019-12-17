@@ -81,3 +81,4 @@ favicon: /favicon.ico
 deploy:
   type: git
   repo: git@github.com:woozyking/blog.git
+  branch: master
