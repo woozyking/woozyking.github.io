@@ -17,9 +17,15 @@ All of the above has been possible thanks to problem breakdown. It is a common t
 
 ## Solutions become easier to review
 
-In my example, each commit represents the solution to a less scoped problem. This results in more constructive reviews, instead of bland approvals.
+![Easy to Review by Rain WZQ](/images/rain_wzq/break-it-down/01.JPG)
+
+In my case, each commit represents the solution to a less scoped problem. This results in faster review time, and more constructive suggestions from reviewers.
+
+On the opposite, when a single solution covers too many grounds, it would take much more time and effort to review, so the agility of development takes a hit. Even worse, reviewers would say "screw it" and blindly approve the behemoth solution, defeats the whole purpose of peer reviewing and fast-track derailing product quality to the netherworld.
 
 ## Interruptions become more manageable
+
+![Smaller Time Chunks by Rain WZQ](/images/rain_wzq/break-it-down/02.JPG)
 
 Suppose you need 2 hours of contiguous time to solve a large problem. During that process, unfortunately, you may get interrupted. Those interruptions will cost you a lot of time to switch your mental state back into the zone.
 
@@ -29,16 +35,20 @@ Even if you do get interrupted in that case, since each problem is about 1/5 com
 
 ## Helps to define better scopes for faster iterations
 
+![Scopes by Rain WZQ](/images/rain_wzq/break-it-down/03.JPG)
+
 In an ideal world, you can pursue after your inner perfectionism without consequences. But in reality, there is always a decision to be made on when to stop pushing further. Otherwise, it may result in your time running out, or budget running dry, or blocking more of your teammates, or maddening more of your clients or stakeholders. You certainly do not want any of those.
 
 So by breaking down larger problems down to smaller scopes, it often becomes easier to realize which ones can be deferred, or even dropped. At Basecamp, they call it [_Scope Hammering_](https://basecamp.com/handbook/04-vocabulary#scope-hammering).
 
 ## Helps to create momentum and build morale
 
+![Positive Energy by Rain WZQ](/images/rain_wzq/break-it-down/04.JPG)
+
 Smaller solutions for smaller problems give faster wins. Faster wins create a healthy momentum to carry you forward and build positive morale.
 
 ## Final Remark
 
-Every real-world technique comes with tradeoffs. For this one, it's the time overhead. The less experienced you are in the domain, the more significant that overhead can be. But given its massive benefits, it's well worth it.
+Every real-world technique comes with tradeoffs. For this one, it's the time overhead. The less experienced you are in the domain, the more significant that overhead can be. But given the benefits, it's well worth it.
 
 So stop chewing through that complex problem, go ahead and break it down.
