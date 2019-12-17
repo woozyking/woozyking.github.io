@@ -17,4 +17,6 @@ jobs:
       - run: yarn install
       - run: hexo clean
       - run: hexo generate
+      - run: git config --global user.email "runzhou.li@gmail.com"
+      - run: git config --global user.name "woozyking"
       - run: hexo deploy
