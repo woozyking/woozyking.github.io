@@ -52,3 +52,9 @@ Smaller solutions for smaller problems give faster wins. Faster wins create a he
 Every real-world technique comes with tradeoffs. For this one, it's the time overhead. The less experienced you are in the domain, the more significant that overhead can be. But given the benefits, it's well worth it.
 
 So stop chewing through that complex problem, go ahead and break it down.
+
+## Acknowledgements
+
+Thanks to my wonderful coworkers at [EQ Works](https://www.eqworks.com/) for reviewing and _breaking down_ this article.
+
+Also thanks to [Rain WZQ](https://www.patreon.com/rainwzq) for the amazing illustrations.
