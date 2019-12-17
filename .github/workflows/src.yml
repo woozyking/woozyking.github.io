@@ -7,21 +7,13 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Clean
-        uses: heowc/action-hexo@master
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          args: clean
-      - name: Generate
-        uses: heowc/action-hexo@master
-        with:
-          args: generate
-      - name: Deploy
-        uses: heowc/action-hexo@master
-        env:
-          EMAIL: runzhou.li@gmail.com
-          NAME: woozyking
-        with:
-          args: deploy
+          node-version: 12
+      - run: npm install -g hexo hexo-deployer-git
+      - run: hexo clean
+      - run: hexo generate
+      - run: hexo deploy

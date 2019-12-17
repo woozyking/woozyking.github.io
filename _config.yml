@@ -80,4 +80,4 @@ favicon: /favicon.ico
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:woozyking/woozyking.github.io.git
+  repo: git@github.com:woozyking/blog.git
