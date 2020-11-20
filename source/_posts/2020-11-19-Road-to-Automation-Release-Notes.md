@@ -40,16 +40,18 @@ The portable CLI nature and its usage simplicity allowed the team to adopt the t
 
 The (manual) process highlighted opportunities for further automation. We introduced [an option](https://github.com/EQWorks/release/commit/21d627883c2d5ff680c61f54ff429629ec1a581f) to directly update the GitHub release notes, which eradicated step 4 from above. Then we started integrating the release CLI as [a part of the CI/CD (continuous integration/deployment) workflows](https://github.com/EQWorks/notify/blob/master/.github/workflows/npm.yml#L40) of our growing number of projects, which eliminated the need for steps 2 and 3. And at the time of writing, we're attempting to [automate away step 1](https://github.com/EQWorks/release/pull/24) as well.
 
-At this point, we'd have an established adoption of the tool, with little to no accessibility inhibition and minimal human involvement to initiate a release. So after about six months of active usage, we took our next step into refining its core capabilities. We added an alternative output formatting that we adapted from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), as well as an [NLP model for labeling](https://github.com/EQWorks/release/pull/14) the nature of each commit message.
+At this point, we'd have an established adoption of the tool, with little to no accessibility inhibition and minimal human involvement to initiate a release. So after about six months of active usage, we took our next step into refining its core capabilities. We added an alternative output formatting that we adapted from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), as well as an NLP (Natural Language Processing) model [for labeling](https://github.com/EQWorks/release/pull/14) the nature of each commit message.
 
-We initially adopted the NLP model from [a random but lucky encounter](https://github.com/gesteves91/fasttext-commit-classification) and [revised it](https://github.com/EQWorks/release/pull/20) using the [same tool](https://fasttext.cc/) made available from Facebook Research. The model is far from perfect, and its training dataset is still lacking. We already have some ideas lined up [to seek a better model](https://github.com/EQWorks/release/issues/25).
+We initially adopted the NLP model from [a random but lucky encounter](https://github.com/gesteves91/fasttext-commit-classification) and then [revised it](https://github.com/EQWorks/release/pull/20) using the [same tool](https://fasttext.cc/) made available from Facebook Research. The model is far from perfect, and its training dataset is still lacking. We already have some ideas lined up [to seek a better model](https://github.com/EQWorks/release/issues/25) **automatically**.
 
-Today, for some software, such as libraries and tools intended for other developers, we think it's almost sufficient to use the release tool we made to generate their release notes, such as you can see at [release's releases](https://github.com/EQWorks/release/releases). But the ones for our end-users, we would still take some time to grey out irrelevant technical details or summarize out the noteworthy highlights based on the generated release notes.
+Today, for some software, such as libraries and tools intended for other developers, we think it's almost sufficient to use the release tool we made to generate their release notes, such as you can see at [release's releases](https://github.com/EQWorks/release/releases).
 
-The still needed human involvements are perhaps the opportunities to further automate the process, and the [increasingly available](https://openai.com/blog/openai-api/) and [highly accessible](https://pytorch.org/) tools at our disposal will only make it easier by the day.
+But the ones for our end-users, we would still take some time to grey out irrelevant technical details or summarize out the noteworthy highlights based on the generated release notes.
 
 ![grey out](https://i.imgur.com/eyFl3SG.png)
 
 ![highlights](https://i.imgur.com/fhYFtL4.png)
 
-With the right focus on the right objectives, automation can be immensely rewarding.
+The still needed human involvements are perhaps the next targets to improve on, and the [increasingly available](https://openai.com/blog/openai-api/) and [highly accessible](https://pytorch.org/) tools at our disposal will only make it easier by the day.
+
+The above was a piece of our journey, but if you can identify manual chores among any tasks you do, you may hit on this adventurous road of automation too. It shall be rewarding.
