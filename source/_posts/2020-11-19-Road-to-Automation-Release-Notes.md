@@ -1,5 +1,5 @@
 ---
-title: Road to Automation: Release Notes
+title: "Road to Automation: Release Notes"
 date: 2020-11-19 21:48:12
 tags:
   - programming
