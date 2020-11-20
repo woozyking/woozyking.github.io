@@ -29,7 +29,25 @@ We started at the source of software changes -- commits (at the time of writing,
 
 The next step was to prototype the core capabilities of parsing out commit messages and constructing a markdown formatted release notes. Given our existing practice of utilizing git tags for releases, we quickly made the first usable version.
 
-The first version would require [a configuration file](https://github.com/EQWorks/release/blob/de8bff3b83c28ed54cef80ab9a5a31129cceffd5/.env.example) to specify the target project git repository and which tags to compare. Both are apparent areas to improve on. So we progressed it to be a [portable CLI with automatic tag discovery](https://github.com/EQWorks/release/commit/310483172b060051f729c4ceffb3501dcac3f314) that works in any git repository.
+The first version would require [a configuration file](https://github.com/EQWorks/release/blob/de8bff3b83c28ed54cef80ab9a5a31129cceffd5/.env.example) to specify the target project git repository and which tags to compare. Both are apparent areas to improve on. So we progressed it to be a [portable CLI with automatic tag discovery](https://github.com/EQWorks/release/commit/310483172b060051f729c4ceffb3501dcac3f314) that works in any git repository (including `release` itself).
+
+```
+woozyking@runzhoudembp release % release notes --print --skip alpha
+## Release Notes: from v1.4.0 to v1.5.0
+
+### devops
+
+* dogfood github release notes after npm publish (f5718f8 by Runzhou Li (woozyking))
+
+### notes
+
+* `--fetch` flag to control whether to run git fetch (28550c9 by Runzhou Li (woozyking))
+* `--github` flag to update the head ref associated GitHub release (21d6278 by Runzhou Li (woozyking))
+	* omit local file output
+	* factor out `utils.exec` to perform `execSync` and `log`
+	* requires `$GITHUB_TOKEN`, `$GITHUB_OWNER`, and `$GITHUB_REPO` env vars
+	* `$GITHUB_REPO` falls back to local repo toplevel name
+```
 
 The portable CLI nature and its usage simplicity allowed the team to adopt the tool and organically formed a process to perform releases with this tool being a part of it:
 
