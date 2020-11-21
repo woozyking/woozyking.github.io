@@ -60,6 +60,25 @@ The (manual) process highlighted opportunities for further automation. We introd
 
 At this point, we'd have an established adoption of the tool, with little to no accessibility inhibition and minimal human involvement to initiate a release. So after about six months of active usage, we took our next step into refining its core capabilities. We added an alternative output formatting that we adapted from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), as well as an NLP (Natural Language Processing) model [for labeling](https://github.com/EQWorks/release/pull/14) the nature of each commit message.
 
+```
+woozyking@runzhoudembp release % release changelog --print --skip alpha
+## Changelog: from v2.1.1 to v3.0.0
+
+### CHANGED
+
+* version - v3.0.0 (b2156bd by Tamires)
+
+### FIXED
+
+* lib/parse-subject - fix t2 when no match by default it to 'others' (3593397 by Tamires Lowande)
+* lib/baseHandler - cover single tag and no tag cases (281c4c0 by Runzhou Li (woozyking))
+
+### ADDED
+
+* nlp - add model training process as a jupyter notebook (1c57956 by Runzhou Li (woozyking))
+* lib/parseCommits - update to the newly trained sub-1MB NLP model (d7c4a1e by Runzhou Li (woozyking))
+```
+
 We initially adopted the NLP model from [a random but lucky encounter](https://github.com/gesteves91/fasttext-commit-classification) and then [revised it](https://github.com/EQWorks/release/pull/20) using the [same tool](https://fasttext.cc/) made available from Facebook Research. The model is far from perfect, and its training dataset is still lacking. We already have some ideas lined up [to seek a better model](https://github.com/EQWorks/release/issues/25) **automatically**.
 
 Today, for some software, such as libraries and tools intended for other developers, we think it's almost sufficient to use the release tool we made to generate their release notes, such as you can see at [release's releases](https://github.com/EQWorks/release/releases).
